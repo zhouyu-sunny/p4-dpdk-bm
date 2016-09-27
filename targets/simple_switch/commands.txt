@@ -1,0 +1,9 @@
+table_set_default forward_table _drop
+table_set_default state_transfer_table alert
+table_add state_transfer_table state_transfer 0 0 0 => 1
+table_add state_transfer_table state_transfer 0 1 0 => 2
+table_add state_transfer_table state_transfer 0 2 0 => 1
+table_add match_state_table get_state 00:04:00:00:00:00 => 0 0
+table_add match_state_table get_state 00:04:00:00:00:01 => 0 0
+table_add forward_table forward 00:1b:21:3d:ee:7c => 0
+table_add forward_table forward 00:1b:21:3d:ee:7d => 1

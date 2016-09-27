@@ -1,0 +1,7 @@
+#! /bin/bash
+cd ..
+make
+cd targets/dpdk_switch
+make
+
+p4c-bmv2 --json "switch.json" switch.p4
