@@ -22,6 +22,6 @@
 
 namespace bm {
 
-const char bm_version_str[] = "1.2.0-deace1c9";
+const char bm_version_str[] = "1.2.0-fbfaef44";
 
 }  // namespace bm

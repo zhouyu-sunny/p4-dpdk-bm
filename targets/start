@@ -1,3 +1,3 @@
 #! /bin/bash
-sudo ./dpdk_switch/simple_switch --log-console  -i 0@enp7s0f0 -i 1@enp7s0f1 switch.json
+sudo ./simple_switch/simple_switch --log-console  -i 0@eth1 -i 1@eth2 sr.json
 #sudo python mn.py --behavioral-exe simple_switch/simple_switch --json switch.json

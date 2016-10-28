@@ -140,9 +140,8 @@ static void *rx_pmd(void* data) {
       packet_handler(port_id, (const char*)buf, nb_recv, port_mgr->cookie);
       pop_packet(rx_packet_memory);
     }
-
-    
   }
+  return NULL;
 }
 
 

@@ -167,6 +167,7 @@ class add_header : public ActionPrimitive<Header &> {
     if (!hdr.is_valid()) {
       hdr.reset();
       hdr.mark_valid();
+      printf("adad1313\n");
       // updated the length packet register (register 0)
       auto &packet = get_packet();
       packet.set_register(0, packet.get_register(0) + hdr.get_nbytes_packet());

@@ -74,13 +74,13 @@ def main():
 
     # makes sure that the switch will start right away
     simple_switch_p = subprocess.Popen(
-        ["/home/ubuntu/p4/behavioral-model/targets/simple_switch/simple_switch", "-h"],
+        ["/home/ubuntu/p4-dpdk-bm/targets/simple_switch/simple_switch", "-h"],
         stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     simple_switch_p.wait()
 
     # start simple_switch
     simple_switch_p = subprocess.Popen(
-        ["/home/ubuntu/p4/behavioral-model/targets/simple_switch/simple_switch",
+        ["/home/ubuntu/p4-dpdk-bm/targets/simple_switch/simple_switch",
          json_path, "--thrift-port", thrift_port, "--device-id", device_id],
         stdout=subprocess.PIPE)
     # while True:
@@ -97,7 +97,7 @@ def main():
         except:
             pass
 
-    cmd = ["/home/ubuntu/p4/behavioral-model/tools/runtime_CLI.py",
+    cmd = ["/home/ubuntu/p4-dpdk-bm/tools/runtime_CLI.py",
            "--thrift-port", thrift_port]
     cmd += CLI_extra_args
     out = None
@@ -107,7 +107,7 @@ def main():
         if "PYHTONPATH" in sub_env:
             pythonpath = sub_env["PYTHONPATH"] + ":"
         sub_env["PYTHONPATH"] = pythonpath + \
-                                "/home/ubuntu/p4/behavioral-model/thrift_src/gen-py/"
+                                "/home/ubuntu/p4-dpdk-bm/thrift_src/gen-py/"
         p = subprocess.Popen(cmd, stdin=f, stdout=subprocess.PIPE, env=sub_env)
         out, _ = p.communicate()
         rc = p.returncode

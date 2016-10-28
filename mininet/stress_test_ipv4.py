@@ -64,7 +64,7 @@ def start_iperf(net, client_name, server_name):
 
 # is there a need to make this function more general?
 def configure_dp(commands_path, thrift_port):
-    cmd = ["/home/ubuntu/p4/bm/tools/runtime_CLI.py",
+    cmd = ["/home/ubuntu/p4-dpdk-bm/tools/runtime_CLI.py",
            "--thrift-port", str(thrift_port)]
     with open(commands_path, "r") as f:
         print " ".join(cmd)
@@ -73,7 +73,7 @@ def configure_dp(commands_path, thrift_port):
         if "PYHTONPATH" in sub_env:
             pythonpath = sub_env["PYTHONPATH"] + ":"
         sub_env["PYTHONPATH"] = pythonpath + \
-                                "/home/ubuntu/p4/bm/thrift_src/gen-py/"
+                                "/home/ubuntu/p4-dpdk-bm/thrift_src/gen-py/"
         subprocess.Popen(cmd, stdin = f, env = sub_env).wait()
 
 def run_measurement(net, client_name, server_name):
@@ -86,8 +86,8 @@ def main():
     thrift_port = args.thrift_port
     num_hosts = 2
 
-    sw_path = "/home/ubuntu/p4/bm/targets/simple_switch/simple_switch"
-    json_path = "/home/ubuntu/p4/bm/mininet/simple_router.json"
+    sw_path = "/home/ubuntu/p4-dpdk-bm/targets/simple_switch/simple_switch"
+    json_path = "/home/ubuntu/p4-dpdk-bm/mininet/simple_router.json"
     topo = SingleSwitchTopo(sw_path, json_path, thrift_port)
     net = Mininet(topo = topo, host = P4Host, switch = P4Switch,
                   controller = None)
@@ -108,7 +108,7 @@ def main():
 
     sleep(1)
 
-    configure_dp("/home/ubuntu/p4/bm/mininet/stress_test_commands.txt", thrift_port)
+    configure_dp("/home/ubuntu/p4-dpdk-bm/mininet/stress_test_commands.txt", thrift_port)
 
     sleep(1)
 
