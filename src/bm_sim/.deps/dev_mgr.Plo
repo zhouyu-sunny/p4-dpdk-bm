@@ -219,7 +219,7 @@ dev_mgr.lo: dev_mgr.cpp /usr/include/stdc-predef.h \
  ../../include/bm/bm_sim/pcap_file.h /usr/include/pcap.h \
  /usr/include/pcap/pcap.h /usr/include/x86_64-linux-gnu/sys/time.h \
  /usr/include/pcap/bpf.h ../../include/bm/bm_sim/nn.h \
- /usr/include/nanomsg/nn.h /usr/include/c++/4.8/cstring
+ /usr/local/include/nanomsg/nn.h /usr/include/c++/4.8/cstring
 
 /usr/include/stdc-predef.h:
 
@@ -771,6 +771,6 @@ dev_mgr.lo: dev_mgr.cpp /usr/include/stdc-predef.h \
 
 ../../include/bm/bm_sim/nn.h:
 
-/usr/include/nanomsg/nn.h:
+/usr/local/include/nanomsg/nn.h:
 
 /usr/include/c++/4.8/cstring:

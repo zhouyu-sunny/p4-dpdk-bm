@@ -1024,7 +1024,7 @@ simple_router.o: simple_router.cpp /usr/include/stdc-predef.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/socket2.h \
  /usr/include/x86_64-linux-gnu/bits/in.h \
- /usr/local/include/thrift/TLogging.h \
+ /usr/local/include/thrift/TLogging.h /usr/local/include/thrift/TOutput.h \
  /usr/local/include/thrift/transport/TTransportException.h \
  /usr/local/include/thrift/protocol/TProtocolException.h \
  /usr/include/x86_64-linux-gnu/sys/param.h /usr/include/signal.h \
@@ -3348,6 +3348,8 @@ simple_router.o: simple_router.cpp /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/in.h:
 
 /usr/local/include/thrift/TLogging.h:
+
+/usr/local/include/thrift/TOutput.h:
 
 /usr/local/include/thrift/transport/TTransportException.h:
 

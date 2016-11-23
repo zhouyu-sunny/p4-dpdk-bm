@@ -211,7 +211,7 @@ gen-cpp/bm/simple_switch_types.lo: gen-cpp/bm/simple_switch_types.cpp \
  /usr/include/boost/type_traits/is_function.hpp \
  /usr/include/boost/type_traits/detail/false_result.hpp \
  /usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
- /usr/local/include/thrift/TLogging.h \
+ /usr/local/include/thrift/TLogging.h /usr/local/include/thrift/TOutput.h \
  /usr/local/include/thrift/TApplicationException.h \
  /usr/local/include/thrift/protocol/TProtocol.h \
  /usr/local/include/thrift/transport/TTransport.h \
@@ -288,15 +288,15 @@ gen-cpp/bm/simple_switch_types.lo: gen-cpp/bm/simple_switch_types.cpp \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/local/include/thrift/transport/TTransportException.h \
  /usr/local/include/thrift/protocol/TProtocolException.h \
- /usr/include/boost/static_assert.hpp \
- /usr/include/x86_64-linux-gnu/sys/param.h \
+ /usr/include/boost/static_assert.hpp /usr/include/c++/4.8/climits \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/sys/param.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
@@ -312,9 +312,8 @@ gen-cpp/bm/simple_switch_types.lo: gen-cpp/bm/simple_switch_types.cpp \
  /usr/include/c++/4.8/tr1/type_traits \
  /usr/include/c++/4.8/tr1/functional_hash.h \
  /usr/local/include/thrift/TToString.h \
- /usr/include/boost/lexical_cast.hpp /usr/include/c++/4.8/climits \
- /usr/include/c++/4.8/cstring /usr/include/string.h \
- /usr/include/x86_64-linux-gnu/bits/string3.h \
+ /usr/include/boost/lexical_cast.hpp /usr/include/c++/4.8/cstring \
+ /usr/include/string.h /usr/include/x86_64-linux-gnu/bits/string3.h \
  /usr/include/boost/limits.hpp /usr/include/boost/mpl/if.hpp \
  /usr/include/boost/mpl/aux_/value_wknd.hpp \
  /usr/include/boost/mpl/aux_/config/integral.hpp \
@@ -1198,6 +1197,8 @@ gen-cpp/bm/simple_switch_types.h:
 
 /usr/local/include/thrift/TLogging.h:
 
+/usr/local/include/thrift/TOutput.h:
+
 /usr/local/include/thrift/TApplicationException.h:
 
 /usr/local/include/thrift/protocol/TProtocol.h:
@@ -1378,7 +1379,7 @@ gen-cpp/bm/simple_switch_types.h:
 
 /usr/include/boost/static_assert.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/param.h:
+/usr/include/c++/4.8/climits:
 
 /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
 
@@ -1395,6 +1396,8 @@ gen-cpp/bm/simple_switch_types.h:
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/sys/param.h:
 
 /usr/include/signal.h:
 
@@ -1435,8 +1438,6 @@ gen-cpp/bm/simple_switch_types.h:
 /usr/local/include/thrift/TToString.h:
 
 /usr/include/boost/lexical_cast.hpp:
-
-/usr/include/c++/4.8/climits:
 
 /usr/include/c++/4.8/cstring:
 

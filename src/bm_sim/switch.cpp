@@ -174,7 +174,7 @@ SwitchWContexts::init_from_command_line_options(int argc, char *argv[],
   else if (parser.packet_in)
     set_dev_mgr_packet_in(device_id, parser.packet_in_addr, transport);
   else
-    set_dev_mgr_bmi(device_id, transport);
+    set_dev_mgr_dpdk(device_id, transport);
 
   for (const auto &iface : parser.ifaces) {
     std::cout << "Adding interface " << iface.second

@@ -24,6 +24,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include <iostream>
+
 #include <string>
 #include <cassert>
 #include <mutex>
@@ -78,7 +80,7 @@ void push_packet(struct packet_memory* pkts, const char* buf, uint16_t length, u
   memcpy(pkts->packet[head].data, buf, length);
   pkts->packet[head].length = length;
   pkts->packet[head].ingress_port = port_id;
-
+  std::cout<<"STD TRANS"<<pkts->head<<std::endl;
   pkts->head = pkts->head + 1;
 }
 

@@ -42,34 +42,6 @@ parser start {
 
 parser parse_ethernet {
     extract(ethernet);
-    
-    return select(latest.etherType) {
-        ETHERTYPE_IPV4 : parse_ipv4;                      
-        default: ingress;
-    }
-}
-
-parser parse_ipv4 {
-    extract(ipv4);
-
-    return select(latest.fragOffset, latest.ihl, latest.protocol) {
-        IP_PROTOCOLS_IPHL_TCP : parse_tcp;
-        IP_PROTOCOLS_IPHL_UDP : parse_udp;
-        default: ingress;
-    }
-}
-
-
-
-parser parse_udp {
-    extract(udp);
-    
-    return ingress;
-}
-
-parser parse_tcp {
-    extract(tcp);
-    
     return ingress;
 }
 
@@ -81,28 +53,6 @@ parser parse_tcp {
  * Metadata START
  */
 
-header_type state_metadata_t {
-    fields {
-        target_id   : 16;
-        register_id : 16;
-        cur_state   : 8;
-        trigger     : 8;
-        
-    }
-}
-
-metadata state_metadata_t state_metadata;
-
-
-/* Metadata END */
-
-
-field_list state_learn {
-    state_metadata.cur_state;
-    state_metadata.target_id;
-    state_metadata.register_id;
-    
-}
 
 /*
  * Stateful memory START
@@ -132,25 +82,6 @@ action forward(port) {
     modify_field(standard_metadata.egress_spec, port);
 }
 
-
-action get_state(target_id, register_id) {
-    modify_field(state_metadata.target_id, target_id);
-    register_read(state_metadata.cur_state, state_register, register_id);
-    modify_field(state_metadata.trigger, tcp.flags);
-    modify_field(state_metadata.register_id, register_id);
-    generate_digest(1, state_learn);
-    // Read the current state
-    // Read the state transfering trigger
-}
-
-action state_transfer(next_state) {
-    register_write(state_register, state_metadata.register_id, next_state);
-}
-
-action broadcast() {
-    modify_field(standard_metadata.egress_spec, (standard_metadata.ingress_port%2+1));
-}
-
 /* Compound action END */
 
 
@@ -161,40 +92,11 @@ action broadcast() {
 
 table forward_table {
     reads {
-        ethernet.dstAddr : exact;
+        standard_metadata.ingress_port : exact;
     }
     actions {
         forward;
         _drop;
-    }
-    size: 1024;
-}
-
-table match_state_table {
-    reads {
-        ethernet.dstAddr :exact;
-        //ipv4.dstAddr : exact;
-        //ipv4.srcAddr : exact;
-        //tcp.dstPort  : exact;
-        //tcp.srcPort  : exact;
-        //tcp.flags    : exact;
-
-    }
-    actions {
-        get_state;
-    }
-    size: 1024;
-}
-
-table state_transfer_table {
-    reads {
-        state_metadata.target_id : exact;
-        state_metadata.cur_state : exact;
-        state_metadata.trigger   : exact;
-    }
-    actions {
-        state_transfer;
-        alert;
     }
     size: 1024;
 }
@@ -206,11 +108,6 @@ table state_transfer_table {
 
 control ingress {
     apply(forward_table);
-    apply(match_state_table) {
-        hit {
-            apply(state_transfer_table);
-        }
-    }
 }
 
 /* Control END */

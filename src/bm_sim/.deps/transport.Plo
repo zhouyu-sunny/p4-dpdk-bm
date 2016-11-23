@@ -105,7 +105,7 @@ transport.lo: transport.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/bits/shared_ptr.h \
  /usr/include/c++/4.8/bits/shared_ptr_base.h \
  /usr/include/c++/4.8/backward/auto_ptr.h ../../include/bm/bm_sim/nn.h \
- /usr/include/nanomsg/nn.h /usr/include/c++/4.8/cassert \
+ /usr/local/include/nanomsg/nn.h /usr/include/c++/4.8/cassert \
  /usr/include/assert.h /usr/include/c++/4.8/cstring /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h \
  /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/bits/stl_algo.h \
@@ -135,9 +135,10 @@ transport.lo: transport.cpp /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/fxsrintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/adxintrin.h \
  /usr/include/c++/4.8/bits/random.tcc /usr/include/c++/4.8/numeric \
- /usr/include/c++/4.8/bits/stl_numeric.h /usr/include/nanomsg/pubsub.h \
- /usr/include/c++/4.8/iostream /usr/include/c++/4.8/ostream \
- /usr/include/c++/4.8/ios /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/bits/stl_numeric.h \
+ /usr/local/include/nanomsg/pubsub.h /usr/include/c++/4.8/iostream \
+ /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
+ /usr/include/c++/4.8/bits/ios_base.h \
  /usr/include/c++/4.8/bits/locale_classes.h \
  /usr/include/c++/4.8/bits/locale_classes.tcc \
  /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
@@ -422,7 +423,7 @@ transport.lo: transport.cpp /usr/include/stdc-predef.h \
 
 ../../include/bm/bm_sim/nn.h:
 
-/usr/include/nanomsg/nn.h:
+/usr/local/include/nanomsg/nn.h:
 
 /usr/include/c++/4.8/cassert:
 
@@ -502,7 +503,7 @@ transport.lo: transport.cpp /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.8/bits/stl_numeric.h:
 
-/usr/include/nanomsg/pubsub.h:
+/usr/local/include/nanomsg/pubsub.h:
 
 /usr/include/c++/4.8/iostream:
 

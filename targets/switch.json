@@ -61,136 +61,8 @@
             "max_length": null
         },
         {
-            "name": "ipv4_t",
-            "id": 2,
-            "fields": [
-                [
-                    "version",
-                    4
-                ],
-                [
-                    "ihl",
-                    4
-                ],
-                [
-                    "diffserv",
-                    8
-                ],
-                [
-                    "totalLen",
-                    16
-                ],
-                [
-                    "identification",
-                    16
-                ],
-                [
-                    "flags",
-                    3
-                ],
-                [
-                    "fragOffset",
-                    13
-                ],
-                [
-                    "ttl",
-                    8
-                ],
-                [
-                    "protocol",
-                    8
-                ],
-                [
-                    "hdrChecksum",
-                    16
-                ],
-                [
-                    "srcAddr",
-                    32
-                ],
-                [
-                    "dstAddr",
-                    32
-                ]
-            ],
-            "length_exp": null,
-            "max_length": null
-        },
-        {
-            "name": "tcp_t",
-            "id": 3,
-            "fields": [
-                [
-                    "srcPort",
-                    16
-                ],
-                [
-                    "dstPort",
-                    16
-                ],
-                [
-                    "seqNo",
-                    32
-                ],
-                [
-                    "ackNo",
-                    32
-                ],
-                [
-                    "dataOffset",
-                    4
-                ],
-                [
-                    "res",
-                    4
-                ],
-                [
-                    "flags",
-                    8
-                ],
-                [
-                    "window",
-                    16
-                ],
-                [
-                    "checksum",
-                    16
-                ],
-                [
-                    "urgentPtr",
-                    16
-                ]
-            ],
-            "length_exp": null,
-            "max_length": null
-        },
-        {
-            "name": "udp_t",
-            "id": 4,
-            "fields": [
-                [
-                    "srcPort",
-                    16
-                ],
-                [
-                    "dstPort",
-                    16
-                ],
-                [
-                    "length_",
-                    16
-                ],
-                [
-                    "checksum",
-                    16
-                ]
-            ],
-            "length_exp": null,
-            "max_length": null
-        },
-        {
             "name": "ingress_intrinsic_metadata_t",
-            "id": 5,
+            "id": 2,
             "fields": [
                 [
                     "resubmit_flag",
@@ -271,30 +143,6 @@
             ],
             "length_exp": null,
             "max_length": null
-        },
-        {
-            "name": "state_metadata_t",
-            "id": 6,
-            "fields": [
-                [
-                    "target_id",
-                    16
-                ],
-                [
-                    "register_id",
-                    16
-                ],
-                [
-                    "cur_state",
-                    8
-                ],
-                [
-                    "trigger",
-                    8
-                ]
-            ],
-            "length_exp": null,
-            "max_length": null
         }
     ],
     "headers": [
@@ -315,30 +163,6 @@
             "id": 2,
             "header_type": "ethernet_t",
             "metadata": false
-        },
-        {
-            "name": "ipv4",
-            "id": 3,
-            "header_type": "ipv4_t",
-            "metadata": false
-        },
-        {
-            "name": "tcp",
-            "id": 4,
-            "header_type": "tcp_t",
-            "metadata": false
-        },
-        {
-            "name": "udp",
-            "id": 5,
-            "header_type": "udp_t",
-            "metadata": false
-        },
-        {
-            "name": "state_metadata",
-            "id": 6,
-            "header_type": "state_metadata_t",
-            "metadata": true
         }
     ],
     "header_stacks": [],
@@ -349,8 +173,21 @@
             "init_state": "start",
             "parse_states": [
                 {
-                    "name": "parse_ethernet",
+                    "name": "start",
                     "id": 0,
+                    "parser_ops": [],
+                    "transition_key": [],
+                    "transitions": [
+                        {
+                            "value": "default",
+                            "mask": null,
+                            "next_state": "parse_ethernet"
+                        }
+                    ]
+                },
+                {
+                    "name": "parse_ethernet",
+                    "id": 1,
                     "parser_ops": [
                         {
                             "op": "extract",
@@ -362,145 +199,10 @@
                             ]
                         }
                     ],
-                    "transition_key": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "ethernet",
-                                "etherType"
-                            ]
-                        }
-                    ],
-                    "transitions": [
-                        {
-                            "type": "hexstr",
-                            "value": "0x0800",
-                            "mask": null,
-                            "next_state": "parse_ipv4"
-                        },
-                        {
-                            "type": "default",
-                            "value": null,
-                            "mask": null,
-                            "next_state": null
-                        }
-                    ]
-                },
-                {
-                    "name": "parse_tcp",
-                    "id": 1,
-                    "parser_ops": [
-                        {
-                            "op": "extract",
-                            "parameters": [
-                                {
-                                    "type": "regular",
-                                    "value": "tcp"
-                                }
-                            ]
-                        }
-                    ],
                     "transition_key": [],
                     "transitions": [
                         {
-                            "type": "default",
-                            "value": null,
-                            "mask": null,
-                            "next_state": null
-                        }
-                    ]
-                },
-                {
-                    "name": "parse_udp",
-                    "id": 2,
-                    "parser_ops": [
-                        {
-                            "op": "extract",
-                            "parameters": [
-                                {
-                                    "type": "regular",
-                                    "value": "udp"
-                                }
-                            ]
-                        }
-                    ],
-                    "transition_key": [],
-                    "transitions": [
-                        {
-                            "type": "default",
-                            "value": null,
-                            "mask": null,
-                            "next_state": null
-                        }
-                    ]
-                },
-                {
-                    "name": "start",
-                    "id": 3,
-                    "parser_ops": [],
-                    "transition_key": [],
-                    "transitions": [
-                        {
-                            "type": "default",
-                            "value": null,
-                            "mask": null,
-                            "next_state": "parse_ethernet"
-                        }
-                    ]
-                },
-                {
-                    "name": "parse_ipv4",
-                    "id": 4,
-                    "parser_ops": [
-                        {
-                            "op": "extract",
-                            "parameters": [
-                                {
-                                    "type": "regular",
-                                    "value": "ipv4"
-                                }
-                            ]
-                        }
-                    ],
-                    "transition_key": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "ipv4",
-                                "fragOffset"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "ipv4",
-                                "ihl"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "ipv4",
-                                "protocol"
-                            ]
-                        }
-                    ],
-                    "transitions": [
-                        {
-                            "type": "hexstr",
-                            "value": "0x00000506",
-                            "mask": null,
-                            "next_state": "parse_tcp"
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x00000511",
-                            "mask": null,
-                            "next_state": "parse_udp"
-                        },
-                        {
-                            "type": "default",
-                            "value": null,
+                            "value": "default",
                             "mask": null,
                             "next_state": null
                         }
@@ -509,156 +211,20 @@
             ]
         }
     ],
-    "parse_vsets": [],
     "deparsers": [
         {
             "name": "deparser",
             "id": 0,
             "order": [
-                "ethernet",
-                "ipv4",
-                "udp",
-                "tcp"
+                "ethernet"
             ]
         }
     ],
     "meter_arrays": [],
     "actions": [
         {
-            "name": "get_state",
-            "id": 0,
-            "runtime_data": [
-                {
-                    "name": "target_id",
-                    "bitwidth": 16
-                },
-                {
-                    "name": "register_id",
-                    "bitwidth": 32
-                }
-            ],
-            "primitives": [
-                {
-                    "op": "modify_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "state_metadata",
-                                "target_id"
-                            ]
-                        },
-                        {
-                            "type": "runtime_data",
-                            "value": 0
-                        }
-                    ]
-                },
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "state_metadata",
-                                "cur_state"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "state_register"
-                        },
-                        {
-                            "type": "runtime_data",
-                            "value": 1
-                        }
-                    ]
-                },
-                {
-                    "op": "modify_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "state_metadata",
-                                "trigger"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "tcp",
-                                "flags"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "modify_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "state_metadata",
-                                "register_id"
-                            ]
-                        },
-                        {
-                            "type": "runtime_data",
-                            "value": 1
-                        }
-                    ]
-                },
-                {
-                    "op": "generate_digest",
-                    "parameters": [
-                        {
-                            "type": "hexstr",
-                            "value": "0x1"
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x1"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "state_transfer",
-            "id": 1,
-            "runtime_data": [
-                {
-                    "name": "next_state",
-                    "bitwidth": 8
-                }
-            ],
-            "primitives": [
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "state_register"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "state_metadata",
-                                "register_id"
-                            ]
-                        },
-                        {
-                            "type": "runtime_data",
-                            "value": 0
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "forward",
-            "id": 2,
+            "id": 0,
             "runtime_data": [
                 {
                     "name": "port",
@@ -685,19 +251,8 @@
             ]
         },
         {
-            "name": "alert",
-            "id": 3,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "drop",
-                    "parameters": []
-                }
-            ]
-        },
-        {
             "name": "_drop",
-            "id": 4,
+            "id": 1,
             "runtime_data": [],
             "primitives": [
                 {
@@ -726,8 +281,8 @@
                         {
                             "match_type": "exact",
                             "target": [
-                                "ethernet",
-                                "dstAddr"
+                                "standard_metadata",
+                                "ingress_port"
                             ],
                             "mask": null
                         }
@@ -737,82 +292,10 @@
                         "_drop"
                     ],
                     "next_tables": {
-                        "forward": "match_state_table",
-                        "_drop": "match_state_table"
+                        "forward": null,
+                        "_drop": null
                     },
-                    "base_default_next": "match_state_table"
-                },
-                {
-                    "name": "match_state_table",
-                    "id": 1,
-                    "match_type": "exact",
-                    "type": "simple",
-                    "max_size": 1024,
-                    "with_counters": false,
-                    "direct_meters": null,
-                    "support_timeout": false,
-                    "key": [
-                        {
-                            "match_type": "exact",
-                            "target": [
-                                "ethernet",
-                                "dstAddr"
-                            ],
-                            "mask": null
-                        }
-                    ],
-                    "actions": [
-                        "get_state"
-                    ],
-                    "next_tables": {
-                        "__HIT__": "state_transfer_table",
-                        "__MISS__": null
-                    },
-                    "base_default_next": null
-                },
-                {
-                    "name": "state_transfer_table",
-                    "id": 2,
-                    "match_type": "exact",
-                    "type": "simple",
-                    "max_size": 1024,
-                    "with_counters": false,
-                    "direct_meters": null,
-                    "support_timeout": false,
-                    "key": [
-                        {
-                            "match_type": "exact",
-                            "target": [
-                                "state_metadata",
-                                "target_id"
-                            ],
-                            "mask": null
-                        },
-                        {
-                            "match_type": "exact",
-                            "target": [
-                                "state_metadata",
-                                "cur_state"
-                            ],
-                            "mask": null
-                        },
-                        {
-                            "match_type": "exact",
-                            "target": [
-                                "state_metadata",
-                                "trigger"
-                            ],
-                            "mask": null
-                        }
-                    ],
-                    "actions": [
-                        "state_transfer",
-                        "alert"
-                    ],
-                    "next_tables": {
-                        "state_transfer": null,
-                        "alert": null
-                    },
+                    "default_action": null,
                     "base_default_next": null
                 }
             ],
@@ -828,45 +311,10 @@
     ],
     "calculations": [],
     "checksums": [],
-    "learn_lists": [
-        {
-            "id": 1,
-            "name": "state_learn",
-            "elements": [
-                {
-                    "type": "field",
-                    "value": [
-                        "state_metadata",
-                        "cur_state"
-                    ]
-                },
-                {
-                    "type": "field",
-                    "value": [
-                        "state_metadata",
-                        "target_id"
-                    ]
-                },
-                {
-                    "type": "field",
-                    "value": [
-                        "state_metadata",
-                        "register_id"
-                    ]
-                }
-            ]
-        }
-    ],
+    "learn_lists": [],
     "field_lists": [],
     "counter_arrays": [],
-    "register_arrays": [
-        {
-            "name": "state_register",
-            "id": 0,
-            "bitwidth": 8,
-            "size": 1024
-        }
-    ],
+    "register_arrays": [],
     "force_arith": [
         [
             "standard_metadata",

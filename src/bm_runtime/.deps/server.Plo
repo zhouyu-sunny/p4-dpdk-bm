@@ -215,7 +215,8 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/type_traits/is_function.hpp \
  /usr/include/boost/type_traits/detail/false_result.hpp \
  /usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
- /usr/local/include/thrift/TLogging.h /usr/include/boost/shared_ptr.hpp \
+ /usr/local/include/thrift/TLogging.h /usr/local/include/thrift/TOutput.h \
+ /usr/include/boost/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
  /usr/include/boost/config/no_tr1/memory.hpp /usr/include/c++/4.8/memory \
  /usr/include/c++/4.8/bits/stl_tempbuf.h \
@@ -288,15 +289,15 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/local/include/thrift/transport/TTransportException.h \
  /usr/local/include/thrift/protocol/TProtocolException.h \
- /usr/include/boost/static_assert.hpp \
- /usr/include/x86_64-linux-gnu/sys/param.h \
+ /usr/include/boost/static_assert.hpp /usr/include/c++/4.8/climits \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/sys/param.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
@@ -310,13 +311,8 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
  /usr/local/include/thrift/protocol/TVirtualProtocol.h \
  /usr/local/include/thrift/protocol/TBinaryProtocol.tcc \
  /usr/local/include/thrift/server/TSimpleServer.h \
- /usr/local/include/thrift/server/TServer.h \
+ /usr/local/include/thrift/server/TServerFramework.h \
  /usr/local/include/thrift/TProcessor.h \
- /usr/local/include/thrift/transport/TServerTransport.h \
- /usr/local/include/thrift/concurrency/Thread.h \
- /usr/include/boost/weak_ptr.hpp \
- /usr/include/boost/smart_ptr/weak_ptr.hpp \
- /usr/local/include/thrift/server/TThreadedServer.h \
  /usr/local/include/thrift/concurrency/Monitor.h \
  /usr/local/include/thrift/concurrency/Exception.h \
  /usr/local/include/thrift/concurrency/Mutex.h \
@@ -366,6 +362,15 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/type_traits/broken_compiler_spec.hpp \
  /usr/include/boost/next_prior.hpp /usr/include/c++/4.8/iterator \
  /usr/include/c++/4.8/bits/stream_iterator.h \
+ /usr/local/include/thrift/server/TConnectedClient.h \
+ /usr/local/include/thrift/server/TServer.h \
+ /usr/local/include/thrift/transport/TServerTransport.h \
+ /usr/local/include/thrift/concurrency/Thread.h \
+ /usr/include/boost/weak_ptr.hpp \
+ /usr/include/boost/smart_ptr/weak_ptr.hpp \
+ /usr/local/include/thrift/server/TThreadedServer.h \
+ /usr/local/include/thrift/concurrency/PlatformThreadFactory.h \
+ /usr/local/include/thrift/concurrency/PosixThreadFactory.h \
  /usr/local/include/thrift/transport/TServerSocket.h \
  /usr/local/include/thrift/cxxfunctional.h \
  /usr/include/c++/4.8/tr1/functional /usr/include/c++/4.8/tr1/tuple \
@@ -571,8 +576,8 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/chrono/duration.hpp \
  /usr/include/boost/chrono/config.hpp \
  /usr/include/boost/chrono/detail/static_assert.hpp \
- /usr/include/c++/4.8/climits /usr/include/boost/mpl/logical.hpp \
- /usr/include/boost/ratio/ratio.hpp /usr/include/boost/ratio/config.hpp \
+ /usr/include/boost/mpl/logical.hpp /usr/include/boost/ratio/ratio.hpp \
+ /usr/include/boost/ratio/config.hpp \
  /usr/include/boost/ratio/detail/mpl/abs.hpp \
  /usr/include/boost/ratio/detail/mpl/sign.hpp \
  /usr/include/boost/ratio/detail/mpl/gcd.hpp \
@@ -1072,6 +1077,7 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
  ../../include/bm/bm_sim/simple_pre.h \
  ../../thrift_src/gen-cpp/bm/Standard.h \
  /usr/local/include/thrift/TDispatchProcessor.h \
+ /usr/local/include/thrift/async/TConcurrentClientSyncInfo.h \
  ../../thrift_src/gen-cpp/bm/standard_types.h \
  ../../thrift_src/gen-cpp/bm/SimplePre.h \
  ../../thrift_src/gen-cpp/bm/simple_pre_types.h \
@@ -1590,6 +1596,8 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
 
 /usr/local/include/thrift/TLogging.h:
 
+/usr/local/include/thrift/TOutput.h:
+
 /usr/include/boost/shared_ptr.hpp:
 
 /usr/include/boost/smart_ptr/shared_ptr.hpp:
@@ -1764,7 +1772,7 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
 
 /usr/include/boost/static_assert.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/param.h:
+/usr/include/c++/4.8/climits:
 
 /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
 
@@ -1781,6 +1789,8 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/sys/param.h:
 
 /usr/include/signal.h:
 
@@ -1814,19 +1824,9 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
 
 /usr/local/include/thrift/server/TSimpleServer.h:
 
-/usr/local/include/thrift/server/TServer.h:
+/usr/local/include/thrift/server/TServerFramework.h:
 
 /usr/local/include/thrift/TProcessor.h:
-
-/usr/local/include/thrift/transport/TServerTransport.h:
-
-/usr/local/include/thrift/concurrency/Thread.h:
-
-/usr/include/boost/weak_ptr.hpp:
-
-/usr/include/boost/smart_ptr/weak_ptr.hpp:
-
-/usr/local/include/thrift/server/TThreadedServer.h:
 
 /usr/local/include/thrift/concurrency/Monitor.h:
 
@@ -1929,6 +1929,24 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
 /usr/include/c++/4.8/iterator:
 
 /usr/include/c++/4.8/bits/stream_iterator.h:
+
+/usr/local/include/thrift/server/TConnectedClient.h:
+
+/usr/local/include/thrift/server/TServer.h:
+
+/usr/local/include/thrift/transport/TServerTransport.h:
+
+/usr/local/include/thrift/concurrency/Thread.h:
+
+/usr/include/boost/weak_ptr.hpp:
+
+/usr/include/boost/smart_ptr/weak_ptr.hpp:
+
+/usr/local/include/thrift/server/TThreadedServer.h:
+
+/usr/local/include/thrift/concurrency/PlatformThreadFactory.h:
+
+/usr/local/include/thrift/concurrency/PosixThreadFactory.h:
 
 /usr/local/include/thrift/transport/TServerSocket.h:
 
@@ -2379,8 +2397,6 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
 /usr/include/boost/chrono/config.hpp:
 
 /usr/include/boost/chrono/detail/static_assert.hpp:
-
-/usr/include/c++/4.8/climits:
 
 /usr/include/boost/mpl/logical.hpp:
 
@@ -3491,6 +3507,8 @@ server.lo: server.cpp /usr/include/stdc-predef.h \
 ../../thrift_src/gen-cpp/bm/Standard.h:
 
 /usr/local/include/thrift/TDispatchProcessor.h:
+
+/usr/local/include/thrift/async/TConcurrentClientSyncInfo.h:
 
 ../../thrift_src/gen-cpp/bm/standard_types.h:
 

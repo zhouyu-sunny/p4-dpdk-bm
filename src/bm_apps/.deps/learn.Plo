@@ -215,7 +215,8 @@ learn.lo: learn.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/type_traits/is_function.hpp \
  /usr/include/boost/type_traits/detail/false_result.hpp \
  /usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
- /usr/local/include/thrift/TLogging.h /usr/include/boost/shared_ptr.hpp \
+ /usr/local/include/thrift/TLogging.h /usr/local/include/thrift/TOutput.h \
+ /usr/include/boost/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
  /usr/include/boost/config/no_tr1/memory.hpp /usr/include/c++/4.8/memory \
  /usr/include/c++/4.8/bits/stl_tempbuf.h \
@@ -288,15 +289,15 @@ learn.lo: learn.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/local/include/thrift/transport/TTransportException.h \
  /usr/local/include/thrift/protocol/TProtocolException.h \
- /usr/include/boost/static_assert.hpp \
- /usr/include/x86_64-linux-gnu/sys/param.h \
+ /usr/include/boost/static_assert.hpp /usr/include/c++/4.8/climits \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/sys/param.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
@@ -392,12 +393,13 @@ learn.lo: learn.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/error_constants.h \
  ../../thrift_src/gen-cpp/bm/Standard.h \
  /usr/local/include/thrift/TDispatchProcessor.h \
+ /usr/local/include/thrift/async/TConcurrentClientSyncInfo.h \
  ../../thrift_src/gen-cpp/bm/standard_types.h \
  /usr/local/include/thrift/TApplicationException.h \
  ../../thrift_src/gen-cpp/bm/SimplePre.h \
  ../../thrift_src/gen-cpp/bm/simple_pre_types.h \
- /usr/include/nanomsg/pubsub.h /usr/include/c++/4.8/cassert nn.h \
- /usr/include/nanomsg/nn.h
+ /usr/local/include/nanomsg/pubsub.h /usr/include/c++/4.8/cassert nn.h \
+ /usr/local/include/nanomsg/nn.h
 
 /usr/include/stdc-predef.h:
 
@@ -911,6 +913,8 @@ learn.lo: learn.cpp /usr/include/stdc-predef.h \
 
 /usr/local/include/thrift/TLogging.h:
 
+/usr/local/include/thrift/TOutput.h:
+
 /usr/include/boost/shared_ptr.hpp:
 
 /usr/include/boost/smart_ptr/shared_ptr.hpp:
@@ -1085,7 +1089,7 @@ learn.lo: learn.cpp /usr/include/stdc-predef.h \
 
 /usr/include/boost/static_assert.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/param.h:
+/usr/include/c++/4.8/climits:
 
 /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
 
@@ -1102,6 +1106,8 @@ learn.lo: learn.cpp /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/sys/param.h:
 
 /usr/include/signal.h:
 
@@ -1319,6 +1325,8 @@ learn.lo: learn.cpp /usr/include/stdc-predef.h \
 
 /usr/local/include/thrift/TDispatchProcessor.h:
 
+/usr/local/include/thrift/async/TConcurrentClientSyncInfo.h:
+
 ../../thrift_src/gen-cpp/bm/standard_types.h:
 
 /usr/local/include/thrift/TApplicationException.h:
@@ -1327,10 +1335,10 @@ learn.lo: learn.cpp /usr/include/stdc-predef.h \
 
 ../../thrift_src/gen-cpp/bm/simple_pre_types.h:
 
-/usr/include/nanomsg/pubsub.h:
+/usr/local/include/nanomsg/pubsub.h:
 
 /usr/include/c++/4.8/cassert:
 
 nn.h:
 
-/usr/include/nanomsg/nn.h:
+/usr/local/include/nanomsg/nn.h:

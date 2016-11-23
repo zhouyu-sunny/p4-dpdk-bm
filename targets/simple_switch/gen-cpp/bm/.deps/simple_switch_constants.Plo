@@ -212,7 +212,7 @@ gen-cpp/bm/simple_switch_constants.lo: \
  /usr/include/boost/type_traits/is_function.hpp \
  /usr/include/boost/type_traits/detail/false_result.hpp \
  /usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
- /usr/local/include/thrift/TLogging.h \
+ /usr/local/include/thrift/TLogging.h /usr/local/include/thrift/TOutput.h \
  /usr/local/include/thrift/TApplicationException.h \
  /usr/local/include/thrift/protocol/TProtocol.h \
  /usr/local/include/thrift/transport/TTransport.h \
@@ -289,15 +289,15 @@ gen-cpp/bm/simple_switch_constants.lo: \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/local/include/thrift/transport/TTransportException.h \
  /usr/local/include/thrift/protocol/TProtocolException.h \
- /usr/include/boost/static_assert.hpp \
- /usr/include/x86_64-linux-gnu/sys/param.h \
+ /usr/include/boost/static_assert.hpp /usr/include/c++/4.8/climits \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/sys/param.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
@@ -823,6 +823,8 @@ gen-cpp/bm/simple_switch_types.h:
 
 /usr/local/include/thrift/TLogging.h:
 
+/usr/local/include/thrift/TOutput.h:
+
 /usr/local/include/thrift/TApplicationException.h:
 
 /usr/local/include/thrift/protocol/TProtocol.h:
@@ -1003,7 +1005,7 @@ gen-cpp/bm/simple_switch_types.h:
 
 /usr/include/boost/static_assert.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/param.h:
+/usr/include/c++/4.8/climits:
 
 /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
 
@@ -1020,6 +1022,8 @@ gen-cpp/bm/simple_switch_types.h:
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/sys/param.h:
 
 /usr/include/signal.h:
 

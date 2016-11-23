@@ -216,8 +216,8 @@ dev_mgr_packet_in.lo: dev_mgr_packet_in.cpp /usr/include/stdc-predef.h \
  /usr/include/syslog.h /usr/include/x86_64-linux-gnu/sys/syslog.h \
  /usr/include/x86_64-linux-gnu/bits/syslog-path.h \
  /usr/include/x86_64-linux-gnu/bits/syslog.h ../../include/bm/bm_sim/nn.h \
- /usr/include/nanomsg/nn.h /usr/include/c++/4.8/cstring \
- /usr/include/nanomsg/pair.h
+ /usr/local/include/nanomsg/nn.h /usr/include/c++/4.8/cstring \
+ /usr/local/include/nanomsg/pair.h
 
 /usr/include/stdc-predef.h:
 
@@ -759,8 +759,8 @@ dev_mgr_packet_in.lo: dev_mgr_packet_in.cpp /usr/include/stdc-predef.h \
 
 ../../include/bm/bm_sim/nn.h:
 
-/usr/include/nanomsg/nn.h:
+/usr/local/include/nanomsg/nn.h:
 
 /usr/include/c++/4.8/cstring:
 
-/usr/include/nanomsg/pair.h:
+/usr/local/include/nanomsg/pair.h:

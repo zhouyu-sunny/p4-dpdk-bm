@@ -216,7 +216,8 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/type_traits/is_function.hpp \
  /usr/include/boost/type_traits/detail/false_result.hpp \
  /usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
- /usr/local/include/thrift/TLogging.h /usr/include/boost/shared_ptr.hpp \
+ /usr/local/include/thrift/TLogging.h /usr/local/include/thrift/TOutput.h \
+ /usr/include/boost/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
  /usr/include/boost/config/no_tr1/memory.hpp /usr/include/c++/4.8/memory \
  /usr/include/c++/4.8/bits/stl_tempbuf.h \
@@ -289,15 +290,15 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/local/include/thrift/transport/TTransportException.h \
  /usr/local/include/thrift/protocol/TProtocolException.h \
- /usr/include/boost/static_assert.hpp \
- /usr/include/x86_64-linux-gnu/sys/param.h \
+ /usr/include/boost/static_assert.hpp /usr/include/c++/4.8/climits \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/sys/param.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
@@ -308,6 +309,57 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/x86_64-linux-gnu/bits/param.h /usr/include/linux/param.h \
  /usr/include/x86_64-linux-gnu/asm/param.h \
  /usr/include/asm-generic/param.h /usr/include/byteswap.h \
+ /usr/local/include/thrift/async/TConcurrentClientSyncInfo.h \
+ /usr/local/include/thrift/concurrency/Mutex.h \
+ /usr/include/boost/noncopyable.hpp \
+ /usr/local/include/thrift/concurrency/Monitor.h \
+ /usr/local/include/thrift/concurrency/Exception.h \
+ /usr/include/boost/utility.hpp \
+ /usr/include/boost/utility/base_from_member.hpp \
+ /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp \
+ /usr/include/boost/preprocessor/tuple/elem.hpp \
+ /usr/include/boost/preprocessor/facilities/overload.hpp \
+ /usr/include/boost/preprocessor/variadic/size.hpp \
+ /usr/include/boost/preprocessor/tuple/rem.hpp \
+ /usr/include/boost/preprocessor/variadic/elem.hpp \
+ /usr/include/boost/preprocessor/repetition/enum_params.hpp \
+ /usr/include/boost/preprocessor/repetition/repeat_from_to.hpp \
+ /usr/include/boost/preprocessor/arithmetic/add.hpp \
+ /usr/include/boost/preprocessor/arithmetic/dec.hpp \
+ /usr/include/boost/preprocessor/control/while.hpp \
+ /usr/include/boost/preprocessor/list/fold_left.hpp \
+ /usr/include/boost/preprocessor/list/detail/fold_left.hpp \
+ /usr/include/boost/preprocessor/control/expr_iif.hpp \
+ /usr/include/boost/preprocessor/list/adt.hpp \
+ /usr/include/boost/preprocessor/detail/is_binary.hpp \
+ /usr/include/boost/preprocessor/detail/check.hpp \
+ /usr/include/boost/preprocessor/logical/compl.hpp \
+ /usr/include/boost/preprocessor/list/fold_right.hpp \
+ /usr/include/boost/preprocessor/list/detail/fold_right.hpp \
+ /usr/include/boost/preprocessor/list/reverse.hpp \
+ /usr/include/boost/preprocessor/logical/bitand.hpp \
+ /usr/include/boost/preprocessor/control/detail/while.hpp \
+ /usr/include/boost/preprocessor/arithmetic/sub.hpp \
+ /usr/include/boost/utility/binary.hpp \
+ /usr/include/boost/preprocessor/control/deduce_d.hpp \
+ /usr/include/boost/preprocessor/facilities/identity.hpp \
+ /usr/include/boost/preprocessor/seq/cat.hpp \
+ /usr/include/boost/preprocessor/seq/fold_left.hpp \
+ /usr/include/boost/preprocessor/seq/seq.hpp \
+ /usr/include/boost/preprocessor/seq/elem.hpp \
+ /usr/include/boost/preprocessor/seq/size.hpp \
+ /usr/include/boost/preprocessor/seq/transform.hpp \
+ /usr/include/boost/preprocessor/arithmetic/mod.hpp \
+ /usr/include/boost/preprocessor/arithmetic/detail/div_base.hpp \
+ /usr/include/boost/preprocessor/comparison/less_equal.hpp \
+ /usr/include/boost/preprocessor/logical/not.hpp \
+ /usr/include/boost/utility/identity_type.hpp \
+ /usr/include/boost/type_traits/function_traits.hpp \
+ /usr/include/boost/type_traits/add_pointer.hpp \
+ /usr/include/boost/type_traits/remove_reference.hpp \
+ /usr/include/boost/type_traits/broken_compiler_spec.hpp \
+ /usr/include/boost/next_prior.hpp /usr/include/c++/4.8/iterator \
+ /usr/include/c++/4.8/bits/stream_iterator.h \
  ../../thrift_src/gen-cpp/bm/simple_pre_lag_types.h \
  /usr/local/include/thrift/TApplicationException.h \
  /usr/local/include/thrift/cxxfunctional.h \
@@ -329,19 +381,13 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/system/config.hpp \
  /usr/include/boost/system/api_config.hpp /usr/include/boost/cstdint.hpp \
  /usr/include/boost/operators.hpp /usr/include/boost/iterator.hpp \
- /usr/include/c++/4.8/iterator \
- /usr/include/c++/4.8/bits/stream_iterator.h \
- /usr/include/boost/noncopyable.hpp /usr/include/boost/cerrno.hpp \
- /usr/include/boost/config/abi_prefix.hpp \
+ /usr/include/boost/cerrno.hpp /usr/include/boost/config/abi_prefix.hpp \
  /usr/include/boost/config/abi_suffix.hpp \
  /usr/include/boost/thread/lock_types.hpp \
  /usr/include/boost/thread/detail/move.hpp \
- /usr/include/boost/type_traits/remove_reference.hpp \
- /usr/include/boost/type_traits/broken_compiler_spec.hpp \
  /usr/include/boost/type_traits/remove_cv.hpp \
  /usr/include/boost/type_traits/decay.hpp \
  /usr/include/boost/type_traits/remove_bounds.hpp \
- /usr/include/boost/type_traits/add_pointer.hpp \
  /usr/include/boost/mpl/eval_if.hpp /usr/include/boost/mpl/if.hpp \
  /usr/include/boost/mpl/aux_/value_wknd.hpp \
  /usr/include/boost/mpl/aux_/config/integral.hpp \
@@ -357,30 +403,8 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
  /usr/include/boost/mpl/limits/arity.hpp \
  /usr/include/boost/preprocessor/logical/and.hpp \
- /usr/include/boost/preprocessor/logical/bitand.hpp \
  /usr/include/boost/preprocessor/identity.hpp \
- /usr/include/boost/preprocessor/facilities/identity.hpp \
  /usr/include/boost/preprocessor/empty.hpp \
- /usr/include/boost/preprocessor/arithmetic/add.hpp \
- /usr/include/boost/preprocessor/arithmetic/dec.hpp \
- /usr/include/boost/preprocessor/control/while.hpp \
- /usr/include/boost/preprocessor/list/fold_left.hpp \
- /usr/include/boost/preprocessor/list/detail/fold_left.hpp \
- /usr/include/boost/preprocessor/control/expr_iif.hpp \
- /usr/include/boost/preprocessor/list/adt.hpp \
- /usr/include/boost/preprocessor/detail/is_binary.hpp \
- /usr/include/boost/preprocessor/detail/check.hpp \
- /usr/include/boost/preprocessor/logical/compl.hpp \
- /usr/include/boost/preprocessor/list/fold_right.hpp \
- /usr/include/boost/preprocessor/list/detail/fold_right.hpp \
- /usr/include/boost/preprocessor/list/reverse.hpp \
- /usr/include/boost/preprocessor/control/detail/while.hpp \
- /usr/include/boost/preprocessor/tuple/elem.hpp \
- /usr/include/boost/preprocessor/facilities/overload.hpp \
- /usr/include/boost/preprocessor/variadic/size.hpp \
- /usr/include/boost/preprocessor/tuple/rem.hpp \
- /usr/include/boost/preprocessor/variadic/elem.hpp \
- /usr/include/boost/preprocessor/arithmetic/sub.hpp \
  /usr/include/boost/mpl/identity.hpp \
  /usr/include/boost/thread/detail/delete.hpp \
  /usr/include/boost/move/utility.hpp \
@@ -458,8 +482,7 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/chrono/duration.hpp \
  /usr/include/boost/chrono/config.hpp \
  /usr/include/boost/chrono/detail/static_assert.hpp \
- /usr/include/c++/4.8/climits /usr/include/boost/mpl/logical.hpp \
- /usr/include/boost/mpl/or.hpp \
+ /usr/include/boost/mpl/logical.hpp /usr/include/boost/mpl/or.hpp \
  /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp \
  /usr/include/boost/mpl/aux_/nested_type_wknd.hpp \
  /usr/include/boost/mpl/aux_/include_preprocessed.hpp \
@@ -538,8 +561,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/preprocessor/slot/slot.hpp \
  /usr/include/boost/preprocessor/slot/detail/def.hpp \
  /usr/include/boost/preprocessor/repetition/enum.hpp \
- /usr/include/boost/preprocessor/repetition/enum_params.hpp \
- /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp \
  /usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp \
  /usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp \
  /usr/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp \
@@ -781,8 +802,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/format/internals_fwd.hpp \
  /usr/include/boost/format/internals.hpp \
  /usr/include/boost/format/alt_sstream.hpp \
- /usr/include/boost/utility/base_from_member.hpp \
- /usr/include/boost/preprocessor/repetition/repeat_from_to.hpp \
  /usr/include/boost/format/alt_sstream_impl.hpp \
  /usr/include/boost/format/format_class.hpp \
  /usr/include/boost/format/exceptions.hpp \
@@ -861,7 +880,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/range/rbegin.hpp \
  /usr/include/boost/range/reverse_iterator.hpp \
  /usr/include/boost/iterator/reverse_iterator.hpp \
- /usr/include/boost/next_prior.hpp \
  /usr/include/boost/iterator/iterator_adaptor.hpp \
  /usr/include/boost/range/rend.hpp \
  /usr/include/boost/range/algorithm/equal.hpp \
@@ -875,9 +893,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
  /usr/include/boost/concept/usage.hpp \
  /usr/include/boost/concept/detail/concept_def.hpp \
  /usr/include/boost/preprocessor/seq/for_each_i.hpp \
- /usr/include/boost/preprocessor/seq/seq.hpp \
- /usr/include/boost/preprocessor/seq/elem.hpp \
- /usr/include/boost/preprocessor/seq/size.hpp \
  /usr/include/boost/preprocessor/seq/enum.hpp \
  /usr/include/boost/concept/detail/concept_undef.hpp \
  /usr/include/boost/iterator/iterator_concepts.hpp \
@@ -1557,6 +1572,8 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 
 /usr/local/include/thrift/TLogging.h:
 
+/usr/local/include/thrift/TOutput.h:
+
 /usr/include/boost/shared_ptr.hpp:
 
 /usr/include/boost/smart_ptr/shared_ptr.hpp:
@@ -1731,7 +1748,7 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 
 /usr/include/boost/static_assert.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/param.h:
+/usr/include/c++/4.8/climits:
 
 /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
 
@@ -1748,6 +1765,8 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/sys/param.h:
 
 /usr/include/signal.h:
 
@@ -1774,6 +1793,110 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 /usr/include/asm-generic/param.h:
 
 /usr/include/byteswap.h:
+
+/usr/local/include/thrift/async/TConcurrentClientSyncInfo.h:
+
+/usr/local/include/thrift/concurrency/Mutex.h:
+
+/usr/include/boost/noncopyable.hpp:
+
+/usr/local/include/thrift/concurrency/Monitor.h:
+
+/usr/local/include/thrift/concurrency/Exception.h:
+
+/usr/include/boost/utility.hpp:
+
+/usr/include/boost/utility/base_from_member.hpp:
+
+/usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
+
+/usr/include/boost/preprocessor/tuple/elem.hpp:
+
+/usr/include/boost/preprocessor/facilities/overload.hpp:
+
+/usr/include/boost/preprocessor/variadic/size.hpp:
+
+/usr/include/boost/preprocessor/tuple/rem.hpp:
+
+/usr/include/boost/preprocessor/variadic/elem.hpp:
+
+/usr/include/boost/preprocessor/repetition/enum_params.hpp:
+
+/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/add.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/dec.hpp:
+
+/usr/include/boost/preprocessor/control/while.hpp:
+
+/usr/include/boost/preprocessor/list/fold_left.hpp:
+
+/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
+
+/usr/include/boost/preprocessor/control/expr_iif.hpp:
+
+/usr/include/boost/preprocessor/list/adt.hpp:
+
+/usr/include/boost/preprocessor/detail/is_binary.hpp:
+
+/usr/include/boost/preprocessor/detail/check.hpp:
+
+/usr/include/boost/preprocessor/logical/compl.hpp:
+
+/usr/include/boost/preprocessor/list/fold_right.hpp:
+
+/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
+
+/usr/include/boost/preprocessor/list/reverse.hpp:
+
+/usr/include/boost/preprocessor/logical/bitand.hpp:
+
+/usr/include/boost/preprocessor/control/detail/while.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/sub.hpp:
+
+/usr/include/boost/utility/binary.hpp:
+
+/usr/include/boost/preprocessor/control/deduce_d.hpp:
+
+/usr/include/boost/preprocessor/facilities/identity.hpp:
+
+/usr/include/boost/preprocessor/seq/cat.hpp:
+
+/usr/include/boost/preprocessor/seq/fold_left.hpp:
+
+/usr/include/boost/preprocessor/seq/seq.hpp:
+
+/usr/include/boost/preprocessor/seq/elem.hpp:
+
+/usr/include/boost/preprocessor/seq/size.hpp:
+
+/usr/include/boost/preprocessor/seq/transform.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/mod.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/detail/div_base.hpp:
+
+/usr/include/boost/preprocessor/comparison/less_equal.hpp:
+
+/usr/include/boost/preprocessor/logical/not.hpp:
+
+/usr/include/boost/utility/identity_type.hpp:
+
+/usr/include/boost/type_traits/function_traits.hpp:
+
+/usr/include/boost/type_traits/add_pointer.hpp:
+
+/usr/include/boost/type_traits/remove_reference.hpp:
+
+/usr/include/boost/type_traits/broken_compiler_spec.hpp:
+
+/usr/include/boost/next_prior.hpp:
+
+/usr/include/c++/4.8/iterator:
+
+/usr/include/c++/4.8/bits/stream_iterator.h:
 
 ../../thrift_src/gen-cpp/bm/simple_pre_lag_types.h:
 
@@ -1825,12 +1948,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 
 /usr/include/boost/iterator.hpp:
 
-/usr/include/c++/4.8/iterator:
-
-/usr/include/c++/4.8/bits/stream_iterator.h:
-
-/usr/include/boost/noncopyable.hpp:
-
 /usr/include/boost/cerrno.hpp:
 
 /usr/include/boost/config/abi_prefix.hpp:
@@ -1841,17 +1958,11 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 
 /usr/include/boost/thread/detail/move.hpp:
 
-/usr/include/boost/type_traits/remove_reference.hpp:
-
-/usr/include/boost/type_traits/broken_compiler_spec.hpp:
-
 /usr/include/boost/type_traits/remove_cv.hpp:
 
 /usr/include/boost/type_traits/decay.hpp:
 
 /usr/include/boost/type_traits/remove_bounds.hpp:
-
-/usr/include/boost/type_traits/add_pointer.hpp:
 
 /usr/include/boost/mpl/eval_if.hpp:
 
@@ -1887,53 +1998,9 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 
 /usr/include/boost/preprocessor/logical/and.hpp:
 
-/usr/include/boost/preprocessor/logical/bitand.hpp:
-
 /usr/include/boost/preprocessor/identity.hpp:
 
-/usr/include/boost/preprocessor/facilities/identity.hpp:
-
 /usr/include/boost/preprocessor/empty.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/add.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/dec.hpp:
-
-/usr/include/boost/preprocessor/control/while.hpp:
-
-/usr/include/boost/preprocessor/list/fold_left.hpp:
-
-/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
-
-/usr/include/boost/preprocessor/control/expr_iif.hpp:
-
-/usr/include/boost/preprocessor/list/adt.hpp:
-
-/usr/include/boost/preprocessor/detail/is_binary.hpp:
-
-/usr/include/boost/preprocessor/detail/check.hpp:
-
-/usr/include/boost/preprocessor/logical/compl.hpp:
-
-/usr/include/boost/preprocessor/list/fold_right.hpp:
-
-/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
-
-/usr/include/boost/preprocessor/list/reverse.hpp:
-
-/usr/include/boost/preprocessor/control/detail/while.hpp:
-
-/usr/include/boost/preprocessor/tuple/elem.hpp:
-
-/usr/include/boost/preprocessor/facilities/overload.hpp:
-
-/usr/include/boost/preprocessor/variadic/size.hpp:
-
-/usr/include/boost/preprocessor/tuple/rem.hpp:
-
-/usr/include/boost/preprocessor/variadic/elem.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/sub.hpp:
 
 /usr/include/boost/mpl/identity.hpp:
 
@@ -2094,8 +2161,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 /usr/include/boost/chrono/config.hpp:
 
 /usr/include/boost/chrono/detail/static_assert.hpp:
-
-/usr/include/c++/4.8/climits:
 
 /usr/include/boost/mpl/logical.hpp:
 
@@ -2268,10 +2333,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 /usr/include/boost/preprocessor/slot/detail/def.hpp:
 
 /usr/include/boost/preprocessor/repetition/enum.hpp:
-
-/usr/include/boost/preprocessor/repetition/enum_params.hpp:
-
-/usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
 
 /usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
 
@@ -2813,10 +2874,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 
 /usr/include/boost/format/alt_sstream.hpp:
 
-/usr/include/boost/utility/base_from_member.hpp:
-
-/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
-
 /usr/include/boost/format/alt_sstream_impl.hpp:
 
 /usr/include/boost/format/format_class.hpp:
@@ -2983,8 +3040,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 
 /usr/include/boost/iterator/reverse_iterator.hpp:
 
-/usr/include/boost/next_prior.hpp:
-
 /usr/include/boost/iterator/iterator_adaptor.hpp:
 
 /usr/include/boost/range/rend.hpp:
@@ -3010,12 +3065,6 @@ SimplePreLAG_server.lo: SimplePreLAG_server.cpp \
 /usr/include/boost/concept/detail/concept_def.hpp:
 
 /usr/include/boost/preprocessor/seq/for_each_i.hpp:
-
-/usr/include/boost/preprocessor/seq/seq.hpp:
-
-/usr/include/boost/preprocessor/seq/elem.hpp:
-
-/usr/include/boost/preprocessor/seq/size.hpp:
 
 /usr/include/boost/preprocessor/seq/enum.hpp:
 

@@ -110,7 +110,7 @@ packet_pipe.lo: packet_pipe.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/backward/auto_ptr.h /usr/include/c++/4.8/mutex \
  /usr/include/c++/4.8/system_error \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/error_constants.h \
- /usr/include/nanomsg/pair.h /usr/include/c++/4.8/iostream \
+ /usr/local/include/nanomsg/pair.h /usr/include/c++/4.8/iostream \
  /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
  /usr/include/c++/4.8/bits/ios_base.h \
  /usr/include/c++/4.8/bits/locale_classes.h \
@@ -125,9 +125,9 @@ packet_pipe.lo: packet_pipe.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/bits/locale_facets.tcc \
  /usr/include/c++/4.8/bits/basic_ios.tcc \
  /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
- /usr/include/c++/4.8/bits/istream.tcc nn.h /usr/include/nanomsg/nn.h \
- /usr/include/c++/4.8/cassert /usr/include/assert.h \
- /usr/include/c++/4.8/cstring /usr/include/string.h \
+ /usr/include/c++/4.8/bits/istream.tcc nn.h \
+ /usr/local/include/nanomsg/nn.h /usr/include/c++/4.8/cassert \
+ /usr/include/assert.h /usr/include/c++/4.8/cstring /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/string3.h \
  /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/bits/stl_algo.h \
  /usr/include/c++/4.8/bits/algorithmfwd.h \
@@ -442,7 +442,7 @@ packet_pipe.lo: packet_pipe.cpp /usr/include/stdc-predef.h \
 
 /usr/include/x86_64-linux-gnu/c++/4.8/bits/error_constants.h:
 
-/usr/include/nanomsg/pair.h:
+/usr/local/include/nanomsg/pair.h:
 
 /usr/include/c++/4.8/iostream:
 
@@ -486,7 +486,7 @@ packet_pipe.lo: packet_pipe.cpp /usr/include/stdc-predef.h \
 
 nn.h:
 
-/usr/include/nanomsg/nn.h:
+/usr/local/include/nanomsg/nn.h:
 
 /usr/include/c++/4.8/cassert:
 
